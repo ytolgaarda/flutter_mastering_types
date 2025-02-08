@@ -4,7 +4,7 @@ extension NullableOperations<T> on T? {
   T orElse(T defaultValue) {
     return this ?? defaultValue;
 
-    /// null durumunda defaultValue döndürülür.
+   
   }
 }
 
@@ -14,7 +14,7 @@ extension ListExtensions<T> on List<T> {
   String joinWithComma() {
     return join(', ');
 
-    /// List elemanlarını virgülle birleştirir.
+
   }
 
   /// [TR] Listeyi ters çevirir ve yeni bir liste döndürür.
@@ -22,7 +22,7 @@ extension ListExtensions<T> on List<T> {
   List<T> reverseList() {
     return List.from(reversed);
 
-    /// Listeyi ters çevirir ve yeni bir liste döndürür.
+   
   }
 }
 
@@ -44,7 +44,7 @@ extension IterableExtensions<T> on Iterable<T> {
   List<T> filter(bool Function(T) test) {
     return where(test).toList();
 
-    /// Teste uyan elemanları döndürür.
+
   }
 
   /// [TR] Elemanları belirli büyüklüklerde gruplar.
