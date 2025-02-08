@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mastering_types/enum/handler.dart';
 
+/// [TR] Enum örneği
+/// [EN] Enum Example
+
 enum PaymentStatus {
   pending(
     title: 'Pending',
@@ -33,6 +36,8 @@ enum PaymentStatus {
     iconData: Icons.monetization_on_outlined,
   );
 
+  /// [TR] Enum constructor alanları
+  /// [EN] Enum constructor fields
   final String title;
   final String description;
   final Color color;
@@ -45,6 +50,8 @@ enum PaymentStatus {
     required this.iconData,
   });
 
+  /// [TR] Enum handler methodu
+  /// [EN] Enum handler method
   EnumHandler get handler {
     switch (this) {
       case PaymentStatus.pending:

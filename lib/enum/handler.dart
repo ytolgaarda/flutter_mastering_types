@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 
+/// [TR] Enumın her bir durumuna göre işlem yapan bir soyut üst sınıf
+/// [EN] An abstract superclass that do some handling stuff on each state of the enum
 @immutable
 abstract class EnumHandler {
   const EnumHandler._();
@@ -9,6 +11,8 @@ abstract class EnumHandler {
   void handleEnum();
 }
 
+/// [TR] Bu Payment Status enumımıza göre oluşturulmuş örnek sınıflar
+/// [EN] These classes are created by PaymentStatus
 class PendingHandler implements EnumHandler {
   @override
   void handleEnum() {
