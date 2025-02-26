@@ -1,5 +1,8 @@
 import 'package:json_annotation/json_annotation.dart';
 
+// [TR] Tarih formatında gelen string verilerini DateTime nesnesine dönüştürür.
+// [EN] This converter converts string formatted date values into a DateTime object.
+
 class TimeConverter implements JsonConverter<DateTime?, String?> {
   const TimeConverter();
   @override

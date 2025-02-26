@@ -1,12 +1,34 @@
+import 'package:flutter_mastering_types/extension/future_extension.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:flutter_mastering_types/flutter_mastering_types.dart';
-
 void main() {
-  test('adds one to input values', () {
-    final calculator = Calculator();
-    expect(calculator.addOne(2), 3);
-    expect(calculator.addOne(-7), -6);
-    expect(calculator.addOne(0), 1);
+  ///
+
+  group('asyncTryCatch', () {
+    test('Success Result should be returned ', () async {
+      Future<String> succesfulFuture() async {
+        return 'Success';
+      }
+
+      final result = await asyncTryCatch(succesfulFuture());
+
+      expect(result.isSuccess, true);
+      expect(result.data, 'Success');
+      expect(result.error, isNull);
+    });
+
+    test('Error Result should be returned ', () async {
+      Future<String> failureFuture() async {
+        throw Exception('Testing error');
+      }
+
+      final result = await asyncTryCatch(failureFuture());
+
+      expect(result.isSuccess, false);
+      expect(result.data, isNull);
+      expect(result.error, isNotNull);
+      expect(result.error.toString(), contains('Testing error'));
+      expect(result.stackTrace, isNotNull);
+    });
   });
 }
